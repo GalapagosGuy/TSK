@@ -56,6 +56,7 @@ public class Wildfire : MonoBehaviour
         // OBLICZENIE POBOCZNYCH WZORÓW
         wind.CalculateSecondaryVariables();
 
+        Beta = (float)ro_b / MenuController.GroundAngleController.ro_p;
         Beta_op = Mathf.Pow(3.348f * ground.surfaceToVolumeRatio, -0.8189f);
         ro_b = ground.W_o / ground.fuelDepth;
         Q_ig = 250f + 1.116f * ground.M_f;
