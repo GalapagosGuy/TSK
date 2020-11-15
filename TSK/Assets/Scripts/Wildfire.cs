@@ -74,7 +74,7 @@ public class Wildfire : MonoBehaviour
         Gamma = Gamma_max * Mathf.Pow((Beta / Beta_op), A) * Mathf.Exp(A * (1 - (Beta / Beta_op)));
         n_m = 1 - 2.59f * (ground.M_f / MenuController.GroundAngleController.M_x) + 5.11f * Mathf.Pow((ground.M_f / MenuController.GroundAngleController.M_x), 2) - 3.52f * Mathf.Pow((ground.M_f / MenuController.GroundAngleController.M_x), 3);
         n_s = 0.174f * Mathf.Pow(MenuController.GroundAngleController.S_e, -0.19f);
-
+        I_R = Gamma * W_n * MenuController.GroundAngleController.h * n_m * n_s;
         
         float nominator = I_R * Epsilon * (1 + delta_w + delta_s);
         float denominator = ro_b * e * Q_ig;
