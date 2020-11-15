@@ -57,22 +57,22 @@ public class Wildfire : MonoBehaviour
         wind.CalculateSecondaryVariables();
 
 
-        Beta_op = Mathf.Pow(3.348f * ground.surfaceToVolumeRatio, -0.8189f);
+        Beta_op = 3.348f * Mathf.Pow( ground.surfaceToVolumeRatio, -0.8189f);
         ro_b = ground.W_o / ground.fuelDepth;
         Beta = (float)ro_b / MenuController.GroundAngleController.ro_p;
         Q_ig = 250f + 1.116f * ground.M_f;
         W_n = ground.W_o / (1 + MenuController.GroundAngleController.S_t);
-        A = 1f / (Mathf.Pow(4.774f * ground.surfaceToVolumeRatio, 0.1f) - 7.27f);
+        A = 1f / 4.774f * (Mathf.Pow(ground.surfaceToVolumeRatio, 0.1f) - 7.27f);
         e = Mathf.Exp(-138 / ground.surfaceToVolumeRatio);
 
 
         // WZORY Z GŁÓWNEGO WZORU
         Epsilon = Mathf.Pow(192f * 0.2595f * ground.surfaceToVolumeRatio, -1f) * Mathf.Exp((0.792f + 0.618f * Mathf.Pow(ground.surfaceToVolumeRatio, 0.5f)) * (Beta + 0.1f));
         delta_w = wind.C * Mathf.Pow(wind.U, wind.B) * Mathf.Pow((Beta/Beta_op), -1f * wind.E);
-        delta_s = Mathf.Pow((5.275f * Beta), -0.3f) * Mathf.Pow((Mathf.Tan(ground.groundAngle)), 2f);
+        delta_s = 5.275f * Mathf.Pow(Beta, -0.3f) * Mathf.Pow((Mathf.Tan(ground.groundAngle)), 2f);
         Gamma_max = Mathf.Pow(ground.surfaceToVolumeRatio, 1.5f) * Mathf.Pow(495f + 0.594f * Mathf.Pow(ground.surfaceToVolumeRatio, 1.5f), -1f);
         Gamma = Gamma_max * Mathf.Pow((Beta / Beta_op), A) * Mathf.Exp(A * (1 - (Beta / Beta_op)));
-        n_m = 1 - 2.59f * (ground.M_f / MenuController.GroundAngleController.M_x) + 5.11f * Mathf.Pow((ground.M_f / MenuController.GroundAngleController.M_x), 2) - 3.52f * Mathf.Pow((ground.M_f / MenuController.GroundAngleController.M_x), 3);
+        n_m = 1f - 2.59f * (ground.M_f / MenuController.GroundAngleController.M_x) + 5.11f * Mathf.Pow((ground.M_f / MenuController.GroundAngleController.M_x), 2) - 3.52f * Mathf.Pow((ground.M_f / MenuController.GroundAngleController.M_x), 3);
         n_s = 0.174f * Mathf.Pow(MenuController.GroundAngleController.S_e, -0.19f);
         I_R = Gamma * W_n * MenuController.GroundAngleController.h * n_m * n_s;
         
