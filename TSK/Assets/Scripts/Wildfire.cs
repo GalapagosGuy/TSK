@@ -53,6 +53,9 @@ public class Wildfire : MonoBehaviour
         wind = FindObjectOfType<MenuController.WindSpeedController>();
         ground = FindObjectOfType<MenuController.GroundAngleController>();
 
+        // OBLICZENIE POBOCZNYCH WZORÓW
+        wind.CalculateSecondaryVariables();
+
         Beta_op = Mathf.Pow(3.348f * ground.surfaceToVolumeRatio, -0.8189f);
         ro_b = ground.W_o / ground.fuelDepth;
         Q_ig = 250f + 1.116f * ground.M_f;
@@ -61,7 +64,7 @@ public class Wildfire : MonoBehaviour
         e = Mathf.Exp(-138 / ground.surfaceToVolumeRatio);
 
 
-        // wzory z głównego wzoru
+        // WZORY Z GŁÓWNEGO WZORU
         delta_w = wind.C * Mathf.Pow(wind.U, wind.B) * Mathf.Pow((Beta/Beta_op), -1f * wind.E);
         delta_s = Mathf.Pow((5.275f * Beta), -0.3f) * Mathf.Pow((Mathf.Tan(ground.groundAngle)), 2f);
         Gamma_max = Mathf.Pow(ground.surfaceToVolumeRatio, 1.5f) * Mathf.Pow(495f + 0.594f * Mathf.Pow(ground.surfaceToVolumeRatio, 1.5f), -1f);
@@ -69,7 +72,7 @@ public class Wildfire : MonoBehaviour
         n_m = 1 - 2.59f * (ground.M_f / MenuController.GroundAngleController.M_x) + 5.11f * Mathf.Pow((ground.M_f / MenuController.GroundAngleController.M_x), 2) - 3.52f * Mathf.Pow((ground.M_f / MenuController.GroundAngleController.M_x), 3);
         n_s = 0.174f * Mathf.Pow(MenuController.GroundAngleController.S_e, -0.19f);
 
-
+        
         float nominator = I_R * Epsilon * (1 + delta_w + delta_s);
         float denominator = ro_b * e * Q_ig;
 
