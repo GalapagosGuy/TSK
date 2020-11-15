@@ -56,9 +56,10 @@ public class Wildfire : MonoBehaviour
         // OBLICZENIE POBOCZNYCH WZORÓW
         wind.CalculateSecondaryVariables();
 
-        Beta = (float)ro_b / MenuController.GroundAngleController.ro_p;
+
         Beta_op = Mathf.Pow(3.348f * ground.surfaceToVolumeRatio, -0.8189f);
         ro_b = ground.W_o / ground.fuelDepth;
+        Beta = (float)ro_b / MenuController.GroundAngleController.ro_p;
         Q_ig = 250f + 1.116f * ground.M_f;
         W_n = ground.W_o / (1 + MenuController.GroundAngleController.S_t);
         A = 1f / (Mathf.Pow(4.774f * ground.surfaceToVolumeRatio, 0.1f) - 7.27f);
@@ -66,6 +67,7 @@ public class Wildfire : MonoBehaviour
 
 
         // WZORY Z GŁÓWNEGO WZORU
+        Epsilon = Mathf.Pow(192f * 0.2595f * ground.surfaceToVolumeRatio, -1f) * Mathf.Exp((0.792f + 0.618f * Mathf.Pow(ground.surfaceToVolumeRatio, 0.5f)) * (Beta + 0.1f));
         delta_w = wind.C * Mathf.Pow(wind.U, wind.B) * Mathf.Pow((Beta/Beta_op), -1f * wind.E);
         delta_s = Mathf.Pow((5.275f * Beta), -0.3f) * Mathf.Pow((Mathf.Tan(ground.groundAngle)), 2f);
         Gamma_max = Mathf.Pow(ground.surfaceToVolumeRatio, 1.5f) * Mathf.Pow(495f + 0.594f * Mathf.Pow(ground.surfaceToVolumeRatio, 1.5f), -1f);
