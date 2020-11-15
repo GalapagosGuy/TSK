@@ -46,6 +46,7 @@ public class Wildfire : MonoBehaviour
     private float e;
     private float Gamma_max;
 
+    private float nominator, denominator;
 
     private void Start()
     {
@@ -63,7 +64,7 @@ public class Wildfire : MonoBehaviour
         Q_ig = 250f + 1.116f * ground.M_f;
         W_n = ground.W_o / (1 + MenuController.GroundAngleController.S_t);
         A = 1f / 4.774f * (Mathf.Pow(ground.surfaceToVolumeRatio, 0.1f) - 7.27f);
-        e = Mathf.Exp(-138 / ground.surfaceToVolumeRatio);
+        e = Mathf.Exp(-138f / ground.surfaceToVolumeRatio);
 
 
         // WZORY Z GŁÓWNEGO WZORU
@@ -76,8 +77,8 @@ public class Wildfire : MonoBehaviour
         n_s = 0.174f * Mathf.Pow(MenuController.GroundAngleController.S_e, -0.19f);
         I_R = Gamma * W_n * MenuController.GroundAngleController.h * n_m * n_s;
         
-        float nominator = I_R * Epsilon * (1 + delta_w + delta_s);
-        float denominator = ro_b * e * Q_ig;
+        nominator = I_R * Epsilon * (1f + delta_w + delta_s);
+        denominator = ro_b * e * Q_ig;
 
         // FINAL RESULT
         R = nominator / denominator;

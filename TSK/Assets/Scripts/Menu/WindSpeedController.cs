@@ -38,7 +38,7 @@ namespace MenuController
             // WZORY Z OBIEKTU WIATR
             C = 7.47f * Mathf.Exp(-0.133f * Mathf.Pow(ground.surfaceToVolumeRatio, 0.55f));
             B = 0.0256f * Mathf.Pow(ground.surfaceToVolumeRatio, 0.54f); // questionably wzór B - możliwe że powinno być fuelDepth * 0.54;
-            E = 0.715f * Mathf.Exp(-3.59f * Mathf.Pow(10, -4) * ground.surfaceToVolumeRatio);
+            E = 0.715f * Mathf.Exp(-3.59f * Mathf.Pow(10f, -4f) * ground.surfaceToVolumeRatio);
         }
         public void OnValueChanged()
         {

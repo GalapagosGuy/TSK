@@ -1526,7 +1526,7 @@ MonoBehaviour:
   slider: {fileID: 539787871}
   valueDisplay: {fileID: 1985725020}
   ground: {fileID: 386123339}
-  groundAngle: 0
+  groundAngle: 1
   M_f: 0
   W_o: 0.184
   fuelDepth: 6
