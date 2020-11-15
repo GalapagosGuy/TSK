@@ -32,6 +32,8 @@ namespace MenuController
         {
             if (slider)
             {
+                groundAngle = slider.value;
+
                 if (valueDisplay)
                     valueDisplay.text = slider.value + "";
 
