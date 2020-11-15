@@ -1526,6 +1526,11 @@ MonoBehaviour:
   slider: {fileID: 539787871}
   valueDisplay: {fileID: 1985725020}
   ground: {fileID: 386123339}
+  groundAngle: 0
+  M_f: 0
+  W_o: 0
+  fuelDepth: 0
+  surfaceToVolumeRatio: 0
 --- !u!1 &136514278
 GameObject:
   m_ObjectHideFlags: 0
@@ -6905,6 +6910,10 @@ MonoBehaviour:
   wind: {fileID: 1165486364}
   windParticleMinSpeed: 1
   windParticleMaxSpeed: 5
+  U: 3057
+  C: 0
+  B: 0
+  E: 0
 --- !u!1 &534437944
 GameObject:
   m_ObjectHideFlags: 0

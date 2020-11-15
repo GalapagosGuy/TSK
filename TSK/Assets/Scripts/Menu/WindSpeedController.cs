@@ -21,8 +21,9 @@ namespace MenuController
         // PARAMETRY PODŁOŻA
         [Range(0, 5468)]
         public float U;  // prędkość wiatru w środkowym punkcie pożaru - 0 - 5468 ft/min
-        
+
         // ZMIENNE POMOCNICZE
+        [HideInInspector]
         public float C, B, E;
 
         private MenuController.GroundAngleController ground;
