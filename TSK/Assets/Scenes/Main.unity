@@ -188,7 +188,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Reset simulation
+  m_Text: Reset symulacji
 --- !u!222 &8531544
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6545,7 +6545,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Start simulation
+  m_Text: Start symulacji
 --- !u!222 &496021153
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -25938,8 +25938,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 218, y: 4.384197}
-  m_SizeDelta: {x: 435.9, y: 1088.8}
+  m_AnchoredPosition: {x: 218, y: -0.000034332}
+  m_SizeDelta: {x: 435.9, y: 1015.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1636109379
 MonoBehaviour:
@@ -27919,7 +27919,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Stop simulation
+  m_Text: Stop symulacji
 --- !u!222 &1762494995
 CanvasRenderer:
   m_ObjectHideFlags: 0

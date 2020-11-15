@@ -18,6 +18,25 @@ namespace MenuController
         [SerializeField]
         private float windParticleMaxSpeed = 5.0f;
 
+        // PARAMETRY PODŁOŻA
+        [Range(0, 5468)]
+        public float U;  // prędkość wiatru w środkowym punkcie pożaru - 0 - 5468 ft/min
+        
+        // ZMIENNE POMOCNICZE
+        public float C, B, E;
+
+        private MenuController.GroundAngleController ground;
+
+        private void Start()
+        {
+            ground = FindObjectOfType<MenuController.GroundAngleController>();
+
+            // wzory z obiektu Wiatr
+            C = 7.47f * Mathf.Exp(-0.1533f * Mathf.Pow(ground.surfaceToVolumeRatio, 0.55f));
+            B = 0.0256f * Mathf.Pow(ground.surfaceToVolumeRatio, 0.54f); // questionably wzór B - możliwe że powinno być fuelDepth * 0.54;
+            E = 0.715f * Mathf.Exp(-3.59f * Mathf.Pow(10, -4) * ground.surfaceToVolumeRatio);
+        }
+
         public void OnValueChanged()
         {
             if (slider)

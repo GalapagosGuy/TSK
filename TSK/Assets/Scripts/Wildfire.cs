@@ -23,8 +23,44 @@ public class Wildfire : MonoBehaviour
 
     private List<GameObject> spawnedFires = new List<GameObject>();
 
+    private MenuController.WindSpeedController wind;
+    private MenuController.GroundAngleController ground;
+
+    // ZMIENNE GŁÓWNEGO WZORU
+    private float R;
+    private float delta_w;
+    private float delta_s;
+
+
+    // ZMIENNE POMOCNICZE GŁÓWNEGO WZORU
+    private float Beta;
+    private float Beta_op;
+    private float ro_b;
+    private float Q_ig;
+    private float W_n;
+    private float A;
+    private float e;
+    private float Epsilon;
+
     private void Start()
     {
+        // REFERENCJE OBIEKTÓW
+        wind = FindObjectOfType<MenuController.WindSpeedController>();
+        ground = FindObjectOfType<MenuController.GroundAngleController>();
+
+        Beta_op = Mathf.Pow(3.348f * ground.surfaceToVolumeRatio, -0.8189f);
+        ro_b = ground.W_o / ground.fuelDepth;
+        Q_ig = 250f + 1.116f * ground.M_f;
+        W_n = ground.W_o / (1 + MenuController.GroundAngleController.S_t);
+        A = 1f / (Mathf.Pow(4.774f * ground.surfaceToVolumeRatio, 0.1f) - 7.27f);
+        e = Mathf.Exp(-138 / ground.surfaceToVolumeRatio);
+
+
+        // wzory z głównego wzoru
+        delta_w = wind.C * Mathf.Pow(wind.U, wind.B) * Mathf.Pow((Beta/Beta_op), -1f * wind.E);
+        delta_s = Mathf.Pow((5.275f * Beta), -0.3f) * Mathf.Pow((Mathf.Tan(ground.groundAngle)), 2f);
+
+
         startingPosition = this.transform.localPosition;
         oldPosition = startingPosition;
     }
