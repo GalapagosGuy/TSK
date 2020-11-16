@@ -27,10 +27,12 @@ namespace MenuController
         public float C, B, E;
 
         private MenuController.GroundAngleController ground;
+        private Wildfire fire;
 
         private void Start()
         {
             ground = FindObjectOfType<MenuController.GroundAngleController>();
+            fire = FindObjectOfType<Wildfire>();
            
         }
         public void CalculateSecondaryVariables()
@@ -60,6 +62,9 @@ namespace MenuController
                         windMain.simulationSpeed = windParticleMinSpeed + ((windParticleMaxSpeed - windParticleMinSpeed) * (slider.value / slider.maxValue));
                     }
                 }
+
+                U = slider.value;
+                fire.Recalculate();
             }
         }
     }

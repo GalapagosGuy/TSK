@@ -18,12 +18,24 @@ namespace MenuController
         [SerializeField]
         private Color maxValueColor = Color.green;
 
+        private Wildfire fire;
+        private MenuController.GroundAngleController ground;
+
+        private void Start()
+        {
+            fire = FindObjectOfType<Wildfire>();
+            ground = FindObjectOfType<MenuController.GroundAngleController>();
+        }
+
         public void OnValueChanged()
         {
             if (slider)
             {
                 if (valueDisplay)
                     valueDisplay.text = (Mathf.Round(slider.value * 10000) / 10000) + "";
+
+                ground.M_f = slider.value;
+                fire.Recalculate();
 
                 if (groundMeshRenderer)
                 {

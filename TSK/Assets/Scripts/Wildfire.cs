@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Wildfire : MonoBehaviour
@@ -14,6 +15,7 @@ public class Wildfire : MonoBehaviour
     private float distanceToSpawnAnotherFire = 1.0f;
     private float currentDistanceReached = 0.0f;
 
+    public TextMeshProUGUI resultText;
     public GameObject wildFireParticles = null;
 
     public bool simulationStarted = false;
@@ -82,9 +84,15 @@ public class Wildfire : MonoBehaviour
 
         // FINAL RESULT
         R = nominator / denominator;
+        resultText.text = "R = " + R;
 
         startingPosition = this.transform.localPosition;
         oldPosition = startingPosition;
+    }
+
+    public void Recalculate()
+    {
+        Start();
     }
 
     private void FixedUpdate()

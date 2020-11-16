@@ -12,6 +12,7 @@ namespace MenuController
         public TextMeshProUGUI valueDisplay = null;
         public GameObject ground = null;
 
+        private Wildfire fire;
 
         // PARAMETRY PODŁOŻA
         public float groundAngle; // Kąt nachylenia podłoża - 0.0 - 60.0
@@ -27,12 +28,17 @@ namespace MenuController
         public const float S_t = 0.555f; // całkowita zawartość składników mineralnych cząstek paliwa (fuel particle total mineral content)
         public const float S_e = 0.010f; // efektywna zawartość minerałów cząsteczek paliwa(fuel particle effective mineral content)
 
+        private void Start()
+        {
+            fire = FindObjectOfType<Wildfire>();
+        }
 
         public void OnValueChanged()
         {
             if (slider)
             {
-                //groundAngle = slider.value;
+                groundAngle = slider.value;
+                fire.Recalculate();
 
                 if (valueDisplay)
                     valueDisplay.text = slider.value + "";
