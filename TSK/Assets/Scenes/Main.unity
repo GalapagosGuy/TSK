@@ -1528,9 +1528,9 @@ MonoBehaviour:
   ground: {fileID: 386123339}
   groundAngle: 1
   M_f: 0
-  W_o: 0.184
+  W_o: 0.23
   fuelDepth: 6
-  surfaceToVolumeRatio: 109
+  surfaceToVolumeRatio: 1500
 --- !u!1 &136514278
 GameObject:
   m_ObjectHideFlags: 0
