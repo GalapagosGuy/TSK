@@ -34,6 +34,7 @@ namespace MenuController
             ground = FindObjectOfType<MenuController.GroundAngleController>();
             fire = FindObjectOfType<Wildfire>();
             valueDisplay.text = slider.value.ToString();
+            U = slider.value;
 
         }
         public void CalculateSecondaryVariables()

@@ -26,6 +26,7 @@ namespace MenuController
             fire = FindObjectOfType<Wildfire>();
             ground = FindObjectOfType<MenuController.GroundAngleController>();
             valueDisplay.text = slider.value.ToString();
+            ground.M_f = slider.value;
         }
 
         public void OnValueChanged()

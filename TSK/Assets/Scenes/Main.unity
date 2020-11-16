@@ -1524,8 +1524,8 @@ MonoBehaviour:
   slider: {fileID: 539787871}
   valueDisplay: {fileID: 1985725020}
   ground: {fileID: 386123339}
-  groundAngle: 1
-  M_f: 0
+  groundAngle: 0
+  M_f: 0.04
   W_o: 0.23
   fuelDepth: 6
   surfaceToVolumeRatio: 1500
@@ -6976,7 +6976,7 @@ MonoBehaviour:
   wind: {fileID: 1165486364}
   windParticleMinSpeed: 1
   windParticleMaxSpeed: 5
-  U: 3057
+  U: 1056
   C: 0
   B: 0
   E: 0
