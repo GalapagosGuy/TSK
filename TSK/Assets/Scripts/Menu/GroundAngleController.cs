@@ -31,7 +31,7 @@ namespace MenuController
         private void Start()
         {
             fire = FindObjectOfType<Wildfire>();
-            OnValueChanged();
+            valueDisplay.text = slider.value.ToString();
         }
 
         public void OnValueChanged()

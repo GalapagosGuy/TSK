@@ -29,11 +29,11 @@ namespace MenuController
         private MenuController.GroundAngleController ground;
         private Wildfire fire;
 
-        private void Start()
+        private void Awake()
         {
             ground = FindObjectOfType<MenuController.GroundAngleController>();
             fire = FindObjectOfType<Wildfire>();
-            OnValueChanged();
+            valueDisplay.text = slider.value.ToString();
 
         }
         public void CalculateSecondaryVariables()
