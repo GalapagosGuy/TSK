@@ -70,7 +70,7 @@ public class Wildfire : MonoBehaviour
 
 
         // WZORY Z GŁÓWNEGO WZORU
-        Epsilon = Mathf.Pow(192f + 0.2595f * ground.surfaceToVolumeRatio, -1f) * Mathf.Exp((0.792f + 0.618f * Mathf.Pow(ground.surfaceToVolumeRatio, 0.5f)) * (Beta + 0.1f));
+        Epsilon = Mathf.Pow((192f + 0.2595f * ground.surfaceToVolumeRatio), -1f) * Mathf.Exp((0.792f + 0.681f * Mathf.Pow(ground.surfaceToVolumeRatio, 0.5f)) * (Beta + 0.1f));
         delta_w = wind.C * Mathf.Pow(wind.U, wind.B) * Mathf.Pow((Beta / Beta_op), -1f * wind.E);
         delta_s = 5.275f * Mathf.Pow(Beta, -0.3f) * Mathf.Pow((Mathf.Tan(ground.groundAngle)), 2f);
         Gamma_max = Mathf.Pow(ground.surfaceToVolumeRatio, 1.5f) * Mathf.Pow(495f + 0.0594f * Mathf.Pow(ground.surfaceToVolumeRatio, 1.5f), -1f);
