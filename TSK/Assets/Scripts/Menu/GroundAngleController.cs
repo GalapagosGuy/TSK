@@ -23,9 +23,9 @@ namespace MenuController
 
         // STAŁE PODŁOŻA - UPROSZCZENIA
         public const float ro_p = 32.0f;  // nadmierna gęstość cząstek posiada stałą wartość 32.0 (lb/ft.^3)
-        public const float h = 8.0f; // cząstki paliwa o niskiej zawartości ciepła
+        public const float h = 8000.0f; // cząstki paliwa o niskiej zawartości ciepła
         public const float M_x = 0.3f; // wilgotność wyginięcia (moisture content of extintion)
-        public const float S_t = 0.555f; // całkowita zawartość składników mineralnych cząstek paliwa (fuel particle total mineral content)
+        public const float S_t = 0.0555f; // całkowita zawartość składników mineralnych cząstek paliwa (fuel particle total mineral content)
         public const float S_e = 0.010f; // efektywna zawartość minerałów cząsteczek paliwa(fuel particle effective mineral content)
 
         private void Start()
