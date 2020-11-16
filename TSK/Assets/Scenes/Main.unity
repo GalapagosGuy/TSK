@@ -31882,7 +31882,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Trawa
+  m_Text: Chaparral
 --- !u!222 &2038252638
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -32623,7 +32623,7 @@ MonoBehaviour:
   m_CaptionImage: {fileID: 0}
   m_ItemText: {fileID: 674293414}
   m_ItemImage: {fileID: 0}
-  m_Value: 0
+  m_Value: 1
   m_Options:
     m_Options:
     - m_Text: Trawa
