@@ -112,7 +112,7 @@ public class Wildfire : MonoBehaviour
 
         if (this.transform.localPosition.x < maxXposition)
         {
-            this.transform.localPosition += new Vector3(R * Time.fixedDeltaTime / 1000, 0.0f, 0.0f);
+            this.transform.localPosition += new Vector3(R * Time.fixedDeltaTime / 10 / 60, 0.0f, 0.0f);
 
             if (this.transform.localPosition.x > maxXposition)
                 this.transform.localPosition = new Vector3(maxXposition, this.transform.localPosition.y, this.transform.localPosition.z);
