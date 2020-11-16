@@ -33,6 +33,7 @@ namespace MenuController
         {
             ground = FindObjectOfType<MenuController.GroundAngleController>();
             fire = FindObjectOfType<Wildfire>();
+            OnValueChanged();
 
         }
         public void CalculateSecondaryVariables()

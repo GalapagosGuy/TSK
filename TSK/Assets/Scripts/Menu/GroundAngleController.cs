@@ -31,6 +31,7 @@ namespace MenuController
         private void Start()
         {
             fire = FindObjectOfType<Wildfire>();
+            OnValueChanged();
         }
 
         public void OnValueChanged()

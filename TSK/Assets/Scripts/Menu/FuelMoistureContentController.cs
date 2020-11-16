@@ -25,6 +25,7 @@ namespace MenuController
         {
             fire = FindObjectOfType<Wildfire>();
             ground = FindObjectOfType<MenuController.GroundAngleController>();
+            OnValueChanged();
         }
 
         public void OnValueChanged()

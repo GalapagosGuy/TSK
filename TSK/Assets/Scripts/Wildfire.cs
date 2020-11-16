@@ -61,10 +61,11 @@ public class Wildfire : MonoBehaviour
 
 
         Beta_op = 3.348f * Mathf.Pow(ground.surfaceToVolumeRatio, -0.8189f);
-        ro_b = ground.W_o / ground.fuelDepth;
-        Beta = (float)ro_b / MenuController.GroundAngleController.ro_p;
+        ro_b = (float)ground.W_o / ground.fuelDepth;
+        //Beta = (float)ro_b / MenuController.GroundAngleController.ro_p;
+        Beta = 0.036f;
         Q_ig = 250f + 1.116f * ground.M_f;
-        W_n = ground.W_o / (1 + MenuController.GroundAngleController.S_t);
+        W_n = ground.W_o / (1f + MenuController.GroundAngleController.S_t);
         A = 1f / ((4.774f * Mathf.Pow(ground.surfaceToVolumeRatio, 0.1f)) - 7.27f);
         e = Mathf.Exp(-138f / ground.surfaceToVolumeRatio);
 
