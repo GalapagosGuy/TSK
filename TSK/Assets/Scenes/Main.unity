@@ -9878,7 +9878,7 @@ GameObject:
   - component: {fileID: 727528587}
   - component: {fileID: 727528586}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Ground cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14703,6 +14703,7 @@ MonoBehaviour:
   resultText: {fileID: 1252567706}
   wildFireParticles: {fileID: 5750581105669569105, guid: 0b8ee51058500ce4fb547bbf56a32f78,
     type: 3}
+  groundObject: {fileID: 386123339}
   simulationStarted: 0
 --- !u!65 &1084562616
 BoxCollider:

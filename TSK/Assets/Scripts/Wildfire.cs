@@ -17,6 +17,7 @@ public class Wildfire : MonoBehaviour
 
     public TextMeshProUGUI resultText;
     public GameObject wildFireParticles = null;
+    public GameObject groundObject = null;
 
     public bool simulationStarted = false;
 
@@ -131,6 +132,7 @@ public class Wildfire : MonoBehaviour
     public void SpawnFire()
     {
         GameObject spawnedWildFire = Instantiate(wildFireParticles, this.transform.position, this.transform.rotation);
+        spawnedWildFire.transform.SetParent(groundObject.transform);
         spawnedFires.Add(spawnedWildFire);
     }
 
