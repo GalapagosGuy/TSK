@@ -106,9 +106,15 @@ public class Wildfire : MonoBehaviour
         R = nominator / denominator;
         float Rkmh = R * 0.0003048f * 60f;
         float Rms = R * 0.3048f / 60f;
+
         resultText.text = "R = " + R;
+        resultText.color = Color.Lerp(Color.white, Color.red, R / 2300f );
+
         resultKmHText.text = "R = " + Rkmh;
+        resultKmHText.color = Color.Lerp(Color.white, Color.red, R / 2300f);
+
         resultmsText.text = "R = " + Rms;
+        resultmsText.color = Color.Lerp(Color.white, Color.red, R / 2300f);
     }
 
     public void Recalculate()
