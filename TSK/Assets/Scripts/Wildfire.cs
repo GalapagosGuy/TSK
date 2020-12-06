@@ -17,6 +17,7 @@ public class Wildfire : MonoBehaviour
 
     public TextMeshProUGUI resultText;
     public TextMeshProUGUI resultKmHText;
+    public TextMeshProUGUI resultmsText;
     public GameObject wildFireParticles = null;
     public GameObject groundObject = null;
 
@@ -103,9 +104,11 @@ public class Wildfire : MonoBehaviour
 
         // FINAL RESULT
         R = nominator / denominator;
-        float Rkmh = R * 0.3048f / 60f;
+        float Rkmh = R * 0.0003048f * 60f;
+        float Rms = R * 0.3048f / 60f;
         resultText.text = "R = " + R;
         resultKmHText.text = "R = " + Rkmh;
+        resultmsText.text = "R = " + Rms;
     }
 
     public void Recalculate()
