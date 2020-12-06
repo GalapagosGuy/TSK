@@ -54,6 +54,13 @@ public class Wildfire : MonoBehaviour
 
     private void Start()
     {
+        Calculate();
+        startingPosition = this.transform.localPosition;
+        oldPosition = startingPosition;
+    }
+
+    private void Calculate()
+    {
         // REFERENCJE OBIEKTÓW
         wind = FindObjectOfType<MenuController.WindSpeedController>();
         ground = FindObjectOfType<MenuController.GroundAngleController>();
@@ -99,14 +106,11 @@ public class Wildfire : MonoBehaviour
         float Rkmh = R * 0.3048f / 60f;
         resultText.text = "R = " + R;
         resultKmHText.text = "R = " + Rkmh;
-
-        startingPosition = this.transform.localPosition;
-        oldPosition = startingPosition;
     }
 
     public void Recalculate()
     {
-        Start();
+        Calculate();
     }
 
     private void FixedUpdate()
