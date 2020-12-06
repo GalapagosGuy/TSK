@@ -16,6 +16,7 @@ public class Wildfire : MonoBehaviour
     private float currentDistanceReached = 0.0f;
 
     public TextMeshProUGUI resultText;
+    public TextMeshProUGUI resultKmHText;
     public GameObject wildFireParticles = null;
     public GameObject groundObject = null;
 
@@ -95,7 +96,9 @@ public class Wildfire : MonoBehaviour
 
         // FINAL RESULT
         R = nominator / denominator;
+        float Rkmh = R * 0.3048f / 60f;
         resultText.text = "R = " + R;
+        resultKmHText.text = "R = " + Rkmh;
 
         startingPosition = this.transform.localPosition;
         oldPosition = startingPosition;
