@@ -7301,7 +7301,7 @@ MonoBehaviour:
   m_Direction: 0
   m_MinValue: 0
   m_MaxValue: 60
-  m_WholeNumbers: 1
+  m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -14563,7 +14563,7 @@ MonoBehaviour:
   resultmsText: {fileID: 354533644}
   wildFireParticles: {fileID: 5750581105669569105, guid: 0b8ee51058500ce4fb547bbf56a32f78,
     type: 3}
-  groundObject: {fileID: 386123339}
+  groundObject: {fileID: 524628138}
   simulationStarted: 0
 --- !u!65 &1084562616
 BoxCollider:
