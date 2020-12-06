@@ -43,7 +43,7 @@ namespace MenuController
                 fire.Recalculate();
 
                 if (valueDisplay)
-                    valueDisplay.text = slider.value + "";
+                    valueDisplay.text = Mathf.RoundToInt(slider.value) + "";
 
                 if (ground)
                     ground.transform.rotation = Quaternion.Euler(0, 0, slider.value);

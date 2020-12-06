@@ -9,5 +9,6 @@ public class RightGroundPositionFixer : MonoBehaviour
     private void Update()
     {
         this.transform.position = objectToFollow.transform.position;
+        //this.transform.position = Vector3.Slerp(this.transform.position, objectToFollow.transform.position, 0.1f);
     }
 }
