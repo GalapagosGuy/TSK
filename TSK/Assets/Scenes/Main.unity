@@ -4487,7 +4487,7 @@ MonoBehaviour:
   wind: {fileID: 1165486364}
   windParticleMinSpeed: 1
   windParticleMaxSpeed: 5
-  U: 1056
+  U: 0
   C: 0
   B: 0
   E: 0
@@ -8986,9 +8986,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 432704140}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 5468
+  m_MaxValue: 1232
   m_WholeNumbers: 1
-  m_Value: 1056
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
