@@ -32,7 +32,7 @@ public class Wildfire : MonoBehaviour
     private MenuController.GroundAngleController ground;
 
     // ZMIENNE GŁÓWNEGO WZORU
-    private float R;
+    private float R, Rkmh, Rms;
     private float delta_w;
     private float delta_s;
     private float I_R;
@@ -104,8 +104,8 @@ public class Wildfire : MonoBehaviour
 
         // FINAL RESULT
         R = nominator / denominator;
-        float Rkmh = R * 0.0003048f * 60f;
-        float Rms = R * 0.3048f / 60f;
+        Rkmh = R * 0.0003048f * 60f;
+        Rms = R * 0.3048f / 60f;
 
         resultText.text = "R = " + R;
         resultText.color = Color.Lerp(Color.white, Color.red, R / 2300f );
@@ -129,7 +129,7 @@ public class Wildfire : MonoBehaviour
 
         if (this.transform.localPosition.x < maxXposition)
         {
-            this.transform.localPosition += new Vector3(R * Time.fixedDeltaTime / 10 / 60, 0.0f, 0.0f);
+            this.transform.localPosition += new Vector3(Rms * Time.fixedDeltaTime / 10f, 0.0f, 0.0f);
 
             if (this.transform.localPosition.x > maxXposition)
                 this.transform.localPosition = new Vector3(maxXposition, this.transform.localPosition.y, this.transform.localPosition.z);
